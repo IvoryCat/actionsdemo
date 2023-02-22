@@ -17,14 +17,23 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: webpack artifacts
+          path: public/
+        
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-2016]
         node-version: [16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: webpack artifacts
+          path: public
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
