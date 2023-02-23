@@ -18,6 +18,7 @@ export default class Game {
   }
 
   hasWinner () {
+    console.log('hasWinner call')
     return this.rowWin() || this.colWin() || this.diagWin()
   }
 
