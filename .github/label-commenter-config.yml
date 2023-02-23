@@ -119,4 +119,3 @@ labels:
     labeled:
       issue:
         body: 안녕햐세요 @{{ issue.user.login }} 님, 액션은 참 멋진것 같아요.👍
-
