@@ -103,6 +103,7 @@ describe('Game', () => {
       for (let r = 0; r < game.board.length; r++) {
         game.board[2 - r][r] = 'X'
       }
+      console.log('add!')
       expect(game.hasWinner()).toBe(true)
     })
   })
